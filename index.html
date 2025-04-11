@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TMDB Movie</title>
+    <title>TMDB</title>
     <link rel="stylesheet" href="public/css/style.css">
 </head>
+
 <body class="bg-slate-950">
-    
+
+    <!-- alert start -->
+    <div class="absolute top-6 bg-slate-950 w-full hidden">
+        <p class="text-white pl-4">Kolom pencarian tidak boleh kosong!</p>
+    </div>
+    <!-- alert end -->
+
     <!-- navbar start -->
-    <nav class="bg-slate-800 p-4 mb-4">
-        <div class="max-w-5xl flex justify-between m-auto ">
-            <h1 id="title" class="text-white text-2xl italic cursor-pointer">TMDB Movie</h1>
+    <nav class="bg-slate-800 mb-5">
+        <div class="flex justify-between py-3 px-2 md:px-5 md:py-4 xl:max-w-5xl xl:mx-auto">
+            <h1 id="title" class="text-white text-2xl italic cursor-pointer">TMDB</h1>
             <form class="flex">
-                <input id="inputKeyword" type="text" placeholder="Masukkan Judul..." class="bg-white text-slate-800 py-1 px-2 focus:outline-none focus:ring-4 ring-slate-700">
-                <button id="searchKeyword" class="max-w-[40px] p-1 bg-slate-950 ml-1 hover:bg-slate-900 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%" viewBox="0 0 50 50" fill="currentColor" class="text-white">
-                        <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
-                        </svg>
+                <input id="inputKeyword" type="text" placeholder="Masukkan Judul..."
+                    class="bg-white text-slate-800 outline-none focus:ring-[6px] ring-slate-700 p-1 rounded-tl-sm rounded-bl-sm overflow-hidden">
+                <button id="searchKeyword" class="w-10 bg-slate-950 hover:bg-slate-900 rounded-tr-sm rounded-br-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%" viewBox="0 0 50 50"
+                        fill="currentColor" class="text-white">
+                        <path
+                            d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z">
+                        </path>
+                    </svg>
                 </button>
             </form>
         </div>
     </nav>
     <!-- navbar end -->
 
-    <div id="moviesContainer" class="max-w-5xl mx-auto grid grid-cols-3 gap-4"></div>
-    
+    <div id="movies-container"></div>
+    <!-- <div class="movie-item bg-slate-800 w-full p-4">
+        <img src="" alt="asd">
+        <h3 class="text-white text-center mb-1">title</h3>
+        <p class="text-slate-400 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem dignissimos maiores dolor. Libero non consequatur adipisci exercitationem similique nobis. Tempora!</p>
+        <div class="wrap-btn flex justify-end">
+            <button class="text-white bg-slate-950 py-1.5 px-3 hover:bg-slate-900 rounded-sm mt-2">Show Detail</button>
+        </div>
+    </div> -->
+
     <div class="pagination my-5 flex justify-center gap-4">
-        <button id="prev" class="text-white bg-slate-800 py-2 px-4 hover:bg-slate-700 active:bg-slate-600 cursor-pointer">Prev</button>
+        <button id="prev"
+            class="text-white bg-slate-800 py-2 px-4 hover:bg-slate-700 active:bg-slate-600 cursor-pointer">Prev</button>
         <button id="currentPage" class="text-white bg-slate-800 py-2 px-4"></button>
-        
-        <button id="next" class="text-white bg-slate-800 py-2 px-4 hover:bg-slate-700 active:bg-slate-600 cursor-pointer">Next</button>
+
+        <button id="next"
+            class="text-white bg-slate-800 py-2 px-4 hover:bg-slate-700 active:bg-slate-600 cursor-pointer">Next</button>
     </div>
 
     <script src="public/script.js"></script>
 </body>
+
 </html>
