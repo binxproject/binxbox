@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         movies.forEach(movie => {
             const {title, poster_path, overview} = movie;
             const movieCard = document.createElement('div');
-            movieCard.className = 'bg-slate-800 w-full p-4';
-            movieCard.innerHTML = ` <img src="${API_IMAGE_URL}${poster_path}" alt="Gambar ${title}" class="max-w-52 h-auto mx-auto">
-                                    <h3 class="text-white text-center mb-1">${title}</h3>
-                                    <p class="text-slate-400 text-justify">${overview.substring(0,200)}...</p>
+            movieCard.className = 'bg-slate-800 w-full p-4 md:rounded-sm xl:rounded-lg';
+            movieCard.innerHTML = ` <img src="${API_IMAGE_URL}${poster_path}" alt="Gambar ${title}" class="max-w-52 md:max-w-60 h-auto mx-auto">
+                                    <h3 class="text-white mt-2 text-center mb-1 md:text-xl">${title}</h3>
+                                    <p class="text-slate-400 text-justify md:text-xl">${overview.substring(0,200)}...</p>
                                     <div class="wrap-btn flex justify-end">
-                                        <button class="text-white bg-slate-950 py-1.5 px-3 hover:bg-slate-900 rounded-sm mt-2">Show Detail</button>
+                                        <button class="text-white bg-slate-950 py-1.5 px-3 cursor-pointer hover:bg-slate-900 rounded-sm mt-2 md:py-2 md:px-4 md:text-xl">Show Detail</button>
                                     </div>`;
             moviesContainer.appendChild(movieCard);
         })
