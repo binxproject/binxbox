@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 
-<body class="bg-slate-950">
+<body class="bg-neutral-900">
 
     <!-- alert start -->
-    <div class="absolute top-6 bg-slate-950 w-full hidden">
-        <p class="text-white pl-4">Kolom pencarian tidak boleh kosong!</p>
+    <div id="alert-search" class="fixed w-full md:w-[50vw] xl:w-5xl top-10 left-1/2 -translate-x-1/2 bg-red-500 py-2 px-4 rounded-sm transform duration-500 transition-opacity z-50 hidden">
+        <p class="text-white">Kolom pencarian tidak boleh kosong!</p>
     </div>
     <!-- alert end -->
 
     <!-- navbar start -->
-    <nav class="bg-slate-800">
+    <nav class="bg-neutral-800">
         <div class="flex justify-between py-3 px-2 md:px-5 md:py-4 xl:max-w-5xl xl:mx-auto">
-            <h1 id="title" class="text-white text-2xl italic cursor-pointer md:text-3xl">TMDB</h1>
+            <h1 id="title" class="text-gray-100 text-2xl italic cursor-pointer md:text-3xl">TMDB</h1>
             <form class="flex">
                 <input id="inputKeyword" type="text" placeholder="Masukkan Judul..."
-                    class="bg-white w-36 md:w-64 text-slate-800 outline-none focus:ring-[6px] ring-slate-700 p-1 rounded-tl-sm rounded-bl-sm overflow-hidden">
-                <button id="searchKeyword" class="w-10 bg-slate-950 hover:bg-slate-900 rounded-tr-sm rounded-br-sm cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%" viewBox="0 0 50 50"
-                        fill="currentColor" class="text-white">
+                    class="bg-neutral-800 text-gray-100 placeholder-gray-500 border-2 border-neutral-700 w-36 md:w-64 outline-none focus:ring-2 ring-indigo-500 pl-1 md:pl-1.5 xl:pl-2 rounded-sm overflow-hidden">
+                <button id="searchKeyword"
+                    class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-sm cursor-pointer ml-2 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50" fill="currentColor"
+                        class="text-white w-5 h-5">
                         <path
                             d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z">
                         </path>
@@ -36,24 +37,36 @@
     </nav>
     <!-- navbar end -->
 
-    <div id="movies-container" class="grid gap-5 md:grid-cols-2 mt-5 md:mt-0 md:p-5 xl:max-w-5xl xl:mx-auto xl:grid-cols-3"></div>
-    <!-- <div class="movie-item bg-slate-800 w-full p-4">
-        <img src="" alt="asd">
-        <h3 class="text-white text-center mb-1">title</h3>
-        <p class="text-slate-400 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem dignissimos maiores dolor. Libero non consequatur adipisci exercitationem similique nobis. Tempora!</p>
-        <div class="wrap-btn flex justify-end">
-            <button class="text-white bg-slate-950 py-1.5 px-3 hover:bg-slate-900 rounded-sm mt-2">Show Detail</button>
-        </div>
-    </div> -->
+    <!-- movies start -->
+    <div id="movies-container"
+        class="grid gap-5 md:grid-cols-2 mt-5 md:mt-0 md:p-5 xl:max-w-5xl xl:mx-auto xl:grid-cols-3"></div>
+    <!-- movies end -->
 
+    <!-- pagination start -->
     <div class="pagination my-5 flex justify-center gap-4">
         <button id="prev"
-            class="text-white bg-slate-800 py-2 px-4 hover:bg-slate-700 active:bg-slate-600 cursor-pointer md:text-xl md:py-2.5 md:px-5">Prev</button>
-        <button id="currentPage" class="text-white bg-slate-800 py-2 px-4 md:text-xl md:py-2.5 md:px-5"></button>
+            class="text-gray-200 bg-neutral-600 py-2 px-4 hover:bg-neutral-700 active:bg-neutral-800 cursor-pointer rounded-sm">Prev</button>
+        <button id="currentPage" class="text-gray-200 bg-neutral-600 py-2 px-4 rounded-sm"></button>
 
         <button id="next"
-            class="text-white bg-slate-800 py-2 px-4 hover:bg-slate-700 active:bg-slate-600 cursor-pointer md:text-xl md:py-2.5 md:px-5">Next</button>
+            class="text-gray-200 bg-neutral-600 py-2 px-4 hover:bg-neutral-700 active:bg-neutral-800 cursor-pointer rounded-sm">Next</button>
     </div>
+    <!-- pagination end -->
+
+    <!-- scroll to top start -->
+    <button id="btn-scroll-to-top" class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 fixed bottom-5 right-5 p-2 rounded-sm cursor-pointer z-50 hidden">
+        <svg fill="#ffffff" class="w-5 h-5" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
+            <path id="XMLID_224_"
+                d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+	l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+	C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z" />
+        </svg>
+    </button>
+    <!-- scroll to top end -->
+
+
+
 
     <script src="public/script.js"></script>
 </body>
