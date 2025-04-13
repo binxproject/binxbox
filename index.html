@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TMDB</title>
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- tailwind css -->
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="bg-neutral-900">
 
     <!-- alert start -->
-    <div id="alert-search" class="fixed w-full md:w-[50vw] xl:w-5xl top-5 left-1/2 -translate-x-1/2 bg-red-500 py-2 px-4 rounded-sm transform duration-500 transition-opacity z-50 hidden">
+    <div id="alert-search" class="fixed w-full md:w-[50vw] xl:w-xl top-5 left-1/2 -translate-x-1/2 bg-red-500 py-2 px-4 rounded-sm transform duration-500 transition-opacity z-50 hidden">
         <p class="text-white">Kolom pencarian tidak boleh kosong!</p>
     </div>
     <!-- alert end -->
@@ -19,7 +26,7 @@
     <!-- navbar start -->
     <nav class="bg-neutral-800">
         <div class="flex justify-between py-3 px-2 md:px-5 md:py-4 xl:max-w-5xl xl:mx-auto">
-            <h1 id="title" class="text-gray-100 text-2xl italic cursor-pointer md:text-3xl">TMDB</h1>
+            <h1 id="title" class="text-gray-100 text-2xl cursor-pointer md:text-3xl">TMDB</h1>
             <form class="flex">
                 <input id="inputKeyword" type="text" placeholder="Masukkan Judul..."
                     class="bg-neutral-800 text-gray-100 placeholder-gray-500 border-2 border-neutral-700 w-36 md:w-64 outline-none focus:ring-2 ring-indigo-500 pl-1 md:pl-1.5 xl:pl-2 rounded-sm overflow-hidden">
@@ -38,9 +45,12 @@
     <!-- navbar end -->
 
     <!-- movies start -->
-    <div id="movies-container"
-        class="grid gap-5 md:grid-cols-2 mt-5 md:mt-0 md:p-5 xl:max-w-5xl xl:mx-auto xl:grid-cols-3"></div>
+    <div id="movies-container" class="grid gap-5 md:grid-cols-2 mt-5 md:mt-0 md:p-5 xl:max-w-5xl xl:mx-auto xl:grid-cols-3"></div>
     <!-- movies end -->
+
+    <!-- not found start -->
+    <div id="not-found" class="text-white mt-10 text-xl w-screen h-screen hidden justify-center items-center">Film tidak ditemukan...</div>
+    <!-- not found end -->
 
     <!-- pagination start -->
     <div class="pagination my-5 flex justify-center gap-4">
@@ -54,7 +64,7 @@
     <!-- pagination end -->
 
     <!-- scroll to top start -->
-    <button id="btn-scroll-to-top" class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 fixed bottom-5 right-5 p-2 rounded-sm cursor-pointer z-50 hidden">
+    <button id="btn-scroll-to-top" class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 fixed bottom-5 right-5 p-2 rounded-full cursor-pointer z-50 hidden">
         <svg fill="#ffffff" class="w-5 h-5" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
             <path id="XMLID_224_"
@@ -64,6 +74,12 @@
         </svg>
     </button>
     <!-- scroll to top end -->
+
+    <!-- modal box start -->
+    <div id="modal-box-container" class="bg-[rgba(0,0,0,0.5)] w-screen h-screen items-center fixed top-0 left-0 z-50 hidden"></div>
+    <!-- modal box end -->
+
+    
 
 
 
