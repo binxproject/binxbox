@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TMDB</title>
-    
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <!-- tailwind css -->
     <link rel="stylesheet" href="public/css/style.css">
@@ -17,8 +19,11 @@
 
 <body class="bg-neutral-900">
 
+
+
     <!-- alert start -->
-    <div id="alert-search" class="fixed w-full md:w-[50vw] xl:w-xl top-5 left-1/2 -translate-x-1/2 bg-red-500 py-2 px-4 rounded-sm transform duration-500 transition-opacity z-50 hidden">
+    <div id="alert-search"
+        class="fixed w-full md:w-[50vw] xl:w-xl top-5 left-1/2 -translate-x-1/2 bg-red-500 py-2 px-4 rounded-sm transform duration-500 transition-opacity z-50 hidden">
         <p class="text-white">Kolom pencarian tidak boleh kosong!</p>
     </div>
     <!-- alert end -->
@@ -45,11 +50,13 @@
     <!-- navbar end -->
 
     <!-- movies start -->
-    <div id="movies-container" class="grid gap-5 md:grid-cols-2 mt-5 md:mt-0 md:p-5 xl:max-w-5xl xl:mx-auto xl:grid-cols-3"></div>
+    <div id="movies-container"
+        class="grid gap-5 md:grid-cols-2 mt-5 md:mt-0 md:p-5 xl:max-w-5xl xl:mx-auto xl:grid-cols-3"></div>
     <!-- movies end -->
 
     <!-- not found start -->
-    <div id="not-found" class="text-white mt-10 text-xl w-screen h-screen hidden justify-center items-center">Film tidak ditemukan...</div>
+    <div id="not-found" class="text-white mt-10 text-xl w-screen h-screen hidden justify-center items-center">Film tidak
+        ditemukan...</div>
     <!-- not found end -->
 
     <!-- pagination start -->
@@ -63,8 +70,43 @@
     </div>
     <!-- pagination end -->
 
+    <!-- FAQ start -->
+    <div class="max-w-5xl mx-auto mt-10 mb-16">
+        <h2 class="text-xl text-center text-white mb-2">FAQ</h2>
+
+        <div class="bg-neutral-800 rounded-sm px-2 py-2 mb-5">
+            <button class="w-full text-white flex justify-between items-center faq-toggle cursor-pointer">Ini website apa? 
+                <svg fill="#ffffff" class="w-5 h-5" version="1.1" id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330"
+                xml:space="preserve">
+                <path id="XMLID_224_"
+                    d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+	l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+	C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z" />
+            </svg>
+            </button>
+            <div class="faq-answer text-gray-400 mt-2 hidden">Website ini untuk menampilkan informasi film terbaru menggunakan API dari TMDB.</div>
+        </div>
+
+        <div class="bg-neutral-800 rounded-sm px-2 py-2">
+            <button class="w-full text-white flex justify-between items-center faq-toggle cursor-pointer">Bagaimana cara mencari filmnya? 
+                <svg fill="#ffffff" class="w-5 h-5" version="1.1" id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330"
+                xml:space="preserve">
+                <path id="XMLID_224_"
+                    d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+	l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+	C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z" />
+            </svg>
+            </button>
+            <div class="faq-answer text-gray-400 mt-2 hidden">Gunakan kolom pencarian diatas untuk mengetik judul film yang ingin kamu cari.</div>
+        </div>
+    </div>
+    <!-- FAQ end -->
+
     <!-- scroll to top start -->
-    <button id="btn-scroll-to-top" class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 fixed bottom-5 right-5 p-2 rounded-full cursor-pointer z-50 hidden">
+    <button id="btn-scroll-to-top"
+        class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 fixed bottom-5 right-5 p-2 rounded-full cursor-pointer z-50 hidden">
         <svg fill="#ffffff" class="w-5 h-5" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
             <path id="XMLID_224_"
@@ -76,10 +118,11 @@
     <!-- scroll to top end -->
 
     <!-- modal box start -->
-    <div id="modal-box-container" class="bg-[rgba(0,0,0,0.5)] w-screen h-screen items-center fixed top-0 left-0 z-50 hidden"></div>
+    <div id="modal-box-container"
+        class="bg-[rgba(0,0,0,0.5)] w-screen h-screen items-center fixed top-0 left-0 z-50 hidden"></div>
     <!-- modal box end -->
 
-    
+
 
 
 
