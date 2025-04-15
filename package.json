@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./public/css/style.css --watch"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./public/css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/css/min.style.css --minify"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.3",
